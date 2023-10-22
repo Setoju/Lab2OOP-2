@@ -7,9 +7,8 @@ namespace Program
         public static void Main()
         {
             Console.Write("Enter the time separated by spaces: ");
-            string time = Console.ReadLine();
 
-            string[] data = time.Split(' ');
+            string[] data = Console.ReadLine().Split(' ');
 
             int hour = int.Parse(data[0]);
             int minute = int.Parse(data[1]);
