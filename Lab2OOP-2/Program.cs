@@ -6,6 +6,7 @@ namespace Program
     {
         public static void Main()
         {
+
             Console.Write("Enter the time separated by spaces: ");
 
             string[] data = Console.ReadLine().Split(' ');
@@ -19,7 +20,7 @@ namespace Program
                 MyTime t = new MyTime(hour, minute, second);
 
                 Console.WriteLine($"Time: {t}");
-                Console.WriteLine($"\nSeconds since midnight: {t.TimeSinceMidnight()}");
+                Console.WriteLine($"\nSeconds since midnight: {MyTime.TimeSinceMidnight(t)}");
 
                 Console.WriteLine("\nAdd one second: ");
                 t.AddOneSecond();
@@ -35,13 +36,15 @@ namespace Program
 
                 MyTime tSecond = new MyTime(12, 0, 0);
 
-                Console.WriteLine($"\nDifference between 12:00 and {t} is {t.Difference(tSecond)} seconds");
+                Console.WriteLine($"\nDifference between 12:00 and {t} is {MyTime.Difference(tSecond, t)} seconds");
 
                 Console.Write("\nHow many seconds do you want to add: ");
 
                 int s = Convert.ToInt32(Console.ReadLine());
                 t.AddSeconds(s);
                 Console.WriteLine($"New time after adding {s} seconds: {t}");
+
+                Console.WriteLine(MyTime.WhatLesson(t));
             }
             catch (Exception ex)
             {
